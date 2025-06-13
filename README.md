@@ -1,27 +1,27 @@
-# 人物写真から棒人間を生成するツール
+# Stick Figure Generator from Human Photos
 
-このプロジェクトは、Python と MediaPipe を使用して写真内の人物の姿勢を検出し、その結果をもとに簡易的な棒人間（スティックフィギュア）として描画するものです。
+This project uses Python and MediaPipe to detect human poses in photos and render them as simple stick figures.
 
-## 特徴
+## Features
 
-* MediaPipe の姿勢推定を用いて人物のランドマーク（関節）を検出
-* 検出されたキーポイントに基づいて棒人間を描画
-* 出力画像に棒人間を重ねて保存（オプションで重ねないことも可能）
+* Uses MediaPipe pose estimation to detect human landmarks (joints)
+* Draws stick figures based on the detected keypoints
+* Optionally overlays the stick figure on the original image, or outputs a standalone figure on a white background
 
-## 必要な環境
+## Requirements
 
-* Python 3.7 以上
+* Python 3.7 or higher
 * mediapipe
 * opencv-python
 * numpy
 
-必要なパッケージは以下でインストールできます：
+You can install the required packages with:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## ディレクトリ構成
+## Directory Structure
 
 ```
 .
@@ -33,29 +33,30 @@ pip install -r requirements.txt
 │   └── stick_figure.py
 ├── .gitignore
 ├── LICENSE
-├── README.md(今ここ)
+├── README_ja.md
+├── README.md (you are here)
 └── requirements.txt
 ```
 
-## 使い方
+## Usage
 
-プロジェクトのルートディレクトリから以下のコマンドを実行します：
+Run the following command from the project root directory:
 
 ```bash
 python scripts/stick_figure.py --input inputs/input.jpg --output outputs/output.jpg --overlay True
 ```
 
-`--overlay` オプションを `True` に設定すると元画像に棒人間を重ねて保存し、`False` にすると白背景に棒人間のみを描画します。
+Setting the `--overlay` option to `True` will overlay the stick figure on the original image. Setting it to `False` will draw the stick figure on a white background instead.
 
-## 注意事項
+## Notes
 
-* 入力画像には人物が明確に写っている必要があります。正しく姿勢を検出するために、顔や体全体が見える画像を推奨します。
-* 出力画像は `outputs/output.jpg` に保存されます。
+* Input images should clearly contain a person. To ensure accurate pose detection, it is recommended to use images where the full body and face are visible.
+* The output image will be saved to `outputs/output.jpg`.
 
-## ライセンス
+## License
 
 MIT [License](./LICENSE)
 
 ---
 
-MediaPipe と OpenCV に感謝して ❤️
+Special thanks to MediaPipe and OpenCV ❤️
